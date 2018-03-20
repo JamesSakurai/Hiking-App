@@ -1,0 +1,41 @@
+type User {
+  id: ID! @unique
+  name: String!
+  email: String! @unique
+  pw: String!
+  cart: Cart
+  myTrails: MyTrails
+}
+
+type Cart {
+  id: ID! @unique
+  user: User
+  products: [CartProduct!]!
+}
+
+type MyTrails {
+  id: ID! @unique
+  user: User
+  trails: [Trail!]!
+}
+
+type CartProduct {
+  id: ID! @unique
+  cart: Cart!
+  product: Product!
+}
+
+type Product {
+  id: ID! @unique
+  name: String! @unique
+  imgURL: String
+  desc: String!
+  price: Float!
+}
+
+type Trail {
+  id: ID! @unique
+  name: String! @unique
+  mapFrame: String!
+  distance: Float!
+}
