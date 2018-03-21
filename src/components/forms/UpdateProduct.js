@@ -27,7 +27,7 @@ class UpdateProduct extends Component {
           price: this.state.price
         }
       })
-      window.location.replace('/')
+      window.location.replace('/products')
     }
     return (
       <form className="flexBox"

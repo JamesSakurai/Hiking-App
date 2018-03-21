@@ -20,7 +20,7 @@ type Mutation {
   deleteProduct(id: ID!): Product
 
   createTrail(name: String!, mapFrame: String!, distance: Float!): Trail
-  updateTrail(name: String!, mapFrame: String!, distance: Float!): Trail
+  updateTrail(id: ID!, name: String, mapFrame: String, distance: Float): Trail
   deleteTrail(id: ID!): Trail
 
   addTrailToMyTrails(user_id: ID!, trail_id: ID!): User

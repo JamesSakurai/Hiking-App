@@ -21,14 +21,16 @@ class Trail extends Component {
       await this.props.mutate()
       window.location.replace('/trails')
     }
-    console.log(trail.mapFrame)
     return(
-      <Paper className='trail' zDepth={2}>
+      <Paper className='trail' zDepth={5}>
         <h2>{trail.name}</h2>
         <iframe className="mapFrame" src={trail.mapFrame} title={'Not Available'}/>
         <div>{trail.distance} Miles</div>
         <ModalButton label="Update" display={<UpdateTrail trail={trail}/>}/>
         <ModalButton label="Delete" display={DeleteTrail()} color="secondary"/>
+        <div className="addMyTrails">
+        <ModalButton label="+ MyTrails" />
+        </div>
       </Paper>
     )
   }

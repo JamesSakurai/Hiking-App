@@ -47,7 +47,7 @@ class UpdateTrail extends Component {
                    type="number"
                    min="0.00" step="0.01" max="100"
         />
-        <RaisedButton label="Create"
+        <RaisedButton label="Update"
                       type="submit"
         />
       </form>
