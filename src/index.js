@@ -2,12 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {BrowserRouter as Router} from 'react-router-dom'
 import { ApolloProvider } from 'react-apollo'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar'
-import { ModalButton } from './components/buttons'
-
-import Login from './components/forms/Login'
-
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import * as Colors from 'material-ui/styles/colors'
 
 import { apollo } from './config/apollo'
 import Routes from './config/routes'
@@ -15,18 +12,28 @@ import Nav from './config/nav'
 
 const App = (
   <div>
-    <AppBar title="Walk The Wasatch"
-    iconClassNameRight="muidocs-icon-navigation-expand-more">
-      <ModalButton label="Login" display={<Login/>}/>
-      <Nav/>
-    </AppBar>
+    <Nav/>
     <Routes/>
   </div>
 )
 
+const muiTheme = getMuiTheme({
+  palette: {
+    textColor: Colors.darkBlack,
+    primary1Color: Colors.green700,
+    // primary2Color: Colors.indigo700,
+    // accent1Color: Colors.redA200,
+    // pickerHeaderColor: Colors.darkBlack,
+  },
+  appBar: {
+    height: 100,
+  },
+});
+
+
 const AppWrapper = (
   <ApolloProvider client={apollo}>
-    <MuiThemeProvider>
+    <MuiThemeProvider muiTheme={muiTheme}>
       <Router>
         {App}
       </Router>

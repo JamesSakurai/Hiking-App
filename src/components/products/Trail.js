@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Paper from 'material-ui/Paper'
 import gql from 'graphql-tag'
 import {graphql, compose} from 'react-apollo'
+import { Link } from 'react-router-dom'
 import IconButton from 'material-ui/IconButton'
 import AddBox from 'material-ui-icons/AddBox';
 import RemoveCircle from 'material-ui-icons/RemoveCircle'
@@ -28,23 +29,25 @@ class Trail extends Component {
     }
     return(
       <Paper className='trail' zDepth={5}>
-        <h2>{trail.name}</h2>
-        <iframe className="mapFrame" src={trail.mapFrame} title={'Not Available'}/>
-        <div>{trail.distance} Miles</div>
-      
-        {this.props.cartView?
-          <div>
-            <IconButton onClick={() => RemoveFromMyTrails()}><RemoveCircle/></IconButton>
-          </div>
-          :
-          <span className="buttons">
-           <ModalButton label="Update" display={<UpdateTrail trail={trail}/>}/>
-            {/*<ModalButton label="Delete" display={DeleteProduct()} color="secondary"/>*/}
-          <span className="modal">
-               <IconButton onClick={() => AddToMyTrails()}><AddBox/></IconButton>
+        <Link to="/TrailPage">
+          <h2>{trail.name}</h2>
+          <iframe className="mapFrame" src={trail.mapFrame} title={'Not Available'}/>
+          <div>{trail.distance} Miles</div>
+        
+          {this.props.cartView?
+            <div>
+              <IconButton onClick={() => RemoveFromMyTrails()}><RemoveCircle/></IconButton>
+            </div>
+            :
+            <span className="buttons">
+             <ModalButton label="Update" display={<UpdateTrail trail={trail}/>}/>
+              {/*<ModalButton label="Delete" display={DeleteProduct()} color="secondary"/>*/}
+            <span className="modal">
+                 <IconButton onClick={() => AddToMyTrails()}><AddBox/></IconButton>
+              </span>
             </span>
-          </span>
-        }
+          }
+        </Link>
       </Paper>
       
     )

@@ -7,6 +7,7 @@ export default class extends Component {
   render(){
     return(
       <main>
+        <br/>
         <MyTrailsButton label="Clear Trails"/>
         <MyTrails/>
         {/*<MyTrailsButton label="Checkout"/>*/}
