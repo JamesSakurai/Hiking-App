@@ -1,5 +1,6 @@
 const { GraphQLServer } = require('graphql-yoga')
 const { Prisma } = require('prisma-binding')
+const { myTrails } = require('./resolvers/myTrails')
 const { auth } = require('./resolvers/auth')
 
 const resolvers = {
@@ -42,10 +43,18 @@ const resolvers = {
     },
     allUsers(parent, {}, ctx, info) {
       return ctx.db.query.users({}, info)
+    },
+    async allTrailsInMyTrails(parent, { id }, ctx, info){
+      const myTrails = await ctx.db.query.myTrails(
+        { where: { id } },
+        info
+      )
+      return myTrails.trails
     }
   },
   Mutation: {
     ...auth,
+    ...myTrails,
     updateUser(parent, { id, name, email, pw }, ctx, info) {
       return ctx.db.mutation.updateUser(
         {

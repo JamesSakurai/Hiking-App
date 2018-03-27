@@ -9,6 +9,8 @@ type Query {
   allProducts: [Product]
   allTrails: [Trail]
   allUsers: [User]
+  allTrailsInMyTrails(myTrails_id: ID!): [Trail]
+
 }
 
 type Mutation {

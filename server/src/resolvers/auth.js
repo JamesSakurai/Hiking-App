@@ -20,7 +20,7 @@ const auth = {
   async createUser(parent, { name, email, pw }, ctx, info) {
     pw = await bcrypt.hash(pw, 10)
     return ctx.db.mutation.createUser(
-      { data: { name, email, pw, cart:{create:{}} } },
+      { data: { name, email, pw, cart:{create:{}}, myTrails:{create:{}} } },
       info,
     )
     
