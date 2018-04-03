@@ -10,3 +10,7 @@
   border: dotted;
   margin: 4px;
 }
+
+.clearButton {
+  border: thick double red;
+}

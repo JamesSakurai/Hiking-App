@@ -31,6 +31,7 @@ class CreateUser extends Component {
     return(
       <form className="flexBox"
             onSubmit={submitUser}>
+        <h1>Create an Account</h1>
         <TextField placeholder="Name"
                    onChange={e => this.setState({ name: e.target.value})}/>
         <TextField placeholder="Email"

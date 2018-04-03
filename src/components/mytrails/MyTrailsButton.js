@@ -4,10 +4,13 @@ import {graphql} from 'react-apollo'
 import RaisedButton from 'material-ui/RaisedButton'
 import {user_id} from '../../config/auth'
 
+import '../../styles/buttons.css'
+
 class MyTrailsButton extends Component {
   render(){
     return(
       <RaisedButton
+        className="clearButton"
         label={this.props.label}
         onClick={() => {
           this.props.mutate()

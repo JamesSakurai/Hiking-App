@@ -47,6 +47,7 @@ class MyTrails extends Component {
         <div>
           {user.myTrails.trails === 0 ? <div>No trails saved!</div>:
             <div>
+              <subheader>My Trails</subheader>
               <section>
                 {this.state.trails.map(t => {
                   console.log(t)

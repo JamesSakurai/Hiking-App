@@ -21,7 +21,7 @@ class AllTrails extends Component {
 
 const TrailGrid = (allTrails) => (
   <GridList cols={4} cellHeight="auto" >
-    <Subheader>Trails</Subheader>
+    <Subheader>Trails List</Subheader>
     {allTrails.map(trail =>(
         <GridTile className="tile" key={trail.id}>
           <Trail cartView={false} trail={trail} />

@@ -4,7 +4,7 @@ import { ModalButton } from '../components/buttons'
 import AllTrails from '../components/products/AllTrails'
 // import CreateProduct from '../components/forms/CreateProduct'
 import CreateTrail from '../components/forms/CreateTrail'
-import CreateUser from '../components/forms/CreateUser'
+// import CreateUser from '../components/forms/CreateUser'
 
 export default class extends Component {
   render () {
@@ -12,7 +12,7 @@ export default class extends Component {
       <div>
         {/*<ModalButton label="Add Product" display={<CreateProduct/>}/>*/}<br/>
         <ModalButton label="Add Trail" display={<CreateTrail/>}/>
-        <ModalButton label="Create User" display={<CreateUser/>}/>
+        {/*<ModalButton label="Create User" display={<CreateUser/>}/>*/}
         <AllTrails/>
       </div>
     );

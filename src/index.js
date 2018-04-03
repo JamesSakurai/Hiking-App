@@ -26,7 +26,7 @@ const muiTheme = getMuiTheme({
     // pickerHeaderColor: Colors.darkBlack,
   },
   appBar: {
-    height: 100,
+    height: 80,
   },
 });
 
