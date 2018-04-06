@@ -5,7 +5,6 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import Subheader from 'material-ui/Subheader';
 
 import Trail from './Trail'
-import '../../styles/AllProducts.css'
 
 class AllTrails extends Component {
   render(){
@@ -23,8 +22,8 @@ const TrailGrid = (allTrails) => (
   <GridList cols={4} cellHeight="auto" >
     <Subheader>Trails List</Subheader>
     {allTrails.map(trail =>(
-        <GridTile className="tile" key={trail.id}>
-          <Trail cartView={false} trail={trail} />
+        <GridTile key={trail.id}>
+          <Trail className="flexItem" cartView={false} trail={trail} />
         </GridTile>
       )
     )}
@@ -37,7 +36,9 @@ const ALL_TRAILS_QUERY = gql`
       id
       name
       mapFrame
+      imgURL
       distance
+      difficulty
     }
   }
 `

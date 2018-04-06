@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { ModalButton } from '../components/buttons'
 
-import AllTrails from '../components/products/AllTrails'
+import AllTrails from '../components/trails/AllTrails'
 // import CreateProduct from '../components/forms/CreateProduct'
 import CreateTrail from '../components/forms/CreateTrail'
 // import CreateUser from '../components/forms/CreateUser'

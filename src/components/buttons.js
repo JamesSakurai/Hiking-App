@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import RaisedButton from 'material-ui/RaisedButton'
+import FlatButton from 'material-ui/FlatButton'
 import Dialog from 'material-ui/Dialog'
 
 import '../styles/buttons.css'
@@ -27,12 +27,12 @@ export class ModalButton extends Component {
     const {label, display} = this.props
     return (
       <span className="modal">
-        <RaisedButton primary={this.state.primary}
+        <FlatButton primary={this.state.primary}
                       secondary={this.state.secondary}
                       label={label}
                       onClick={e => this.setState({ open: !this.state.open })} />
         <Dialog
-          actions={<RaisedButton label='Close' onClick={e => this.setState({open: !this.state.open})}/>}
+          actions={<FlatButton label='Close' onClick={e => this.setState({open: !this.state.open})}/>}
           open={this.state.open}
           onRequestClose={e => this.setState({open: !this.state.open})}>
           <div>{display}</div>

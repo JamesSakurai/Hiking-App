@@ -87,16 +87,16 @@ const resolvers = {
         info
       )
     },
-    createTrail(parent, { name, mapFrame, distance }, ctx, info) {
+    createTrail(parent, { name, mapFrame, imgURL, distance, difficulty }, ctx, info) {
       return ctx.db.mutation.createTrail(
-        { data: { name, mapFrame, distance } },
+        { data: { name, mapFrame, imgURL, distance, difficulty } },
         info,
       )
     },
-    updateTrail(parent, { id, name, mapFrame, distance }, ctx, info) {
+    updateTrail(parent, { id, name, mapFrame, imgURL, distance, difficulty }, ctx, info) {
       return ctx.db.mutation.updateTrail(
         {
-          data: { name, mapFrame, distance },
+          data: { name, mapFrame, imgURL, distance, difficulty },
           where: { id }
         },
         info,

@@ -5,6 +5,7 @@ type User {
   pw: String!
   cart: Cart
   myTrails: MyTrails
+
 }
 
 type Cart {
@@ -37,5 +38,7 @@ type Trail {
   id: ID! @unique
   name: String! @unique
   mapFrame: String!
+  imgURL: String
   distance: Float!
+  difficulty: String!
 }

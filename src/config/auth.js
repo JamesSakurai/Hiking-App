@@ -38,14 +38,9 @@ export const login = async (email,pw) => {
 
 //logout clears localstorage and apollo's redux obj
 export const logout = () => {
-  Storage.reset()
-    .then(() => {
-      apollo.resetStore()
-      Storage.reset()
-      alert('logged out')
-      window.location.replace('/')
-    })
-    .catch(err => console.error('Logout failed', err))
+  Storage.remove('token')
+  apollo.resetStore()
+  window.location.replace('/')
 }
 
 //returns boolean based on wether a login token is present in local storage

@@ -10,7 +10,7 @@ body {
 
 .trail {
   padding: 10px;
-  margin: 40px;
+  margin: 25px;
   text-align: center;
   display: inline-block;
 }
@@ -18,4 +18,41 @@ body {
 .mapFrame {
   width: 500px;
   height: 450px;
+}
+
+.imgURL {
+  width: 240px;
+  height: 160px;
+  padding-top: 10px;
+}
+
+.trailName {
+  font-size: 20px;
+}
+
+.trailName:hover {
+  color: blue;
+}
+
+.homeIMG {
+  width: 100%;
+}
+
+.flexContainer {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.flexItem {
+  text-align: center;
+  margin: 30px;
+  font-size: 20px;
+}
+
+.logoutButton {
+  background-color: black;
+  color: white;
+  margin: 25px;
+  padding: 5px;
+  border-radius: 5px;
 }

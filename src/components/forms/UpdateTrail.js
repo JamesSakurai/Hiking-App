@@ -12,7 +12,9 @@ class UpdateTrail extends Component {
     this.state = {
       name: props.trail.name,
       mapFrame: props.trail.mapFrame,
-      distance: props.trail.distance
+      imgURL: props.trail.imgURL,
+      distance: props.trail.distance,
+      difficulty: props.trail.difficulty,
     }
   }
   render () {
@@ -22,7 +24,9 @@ class UpdateTrail extends Component {
         variables: {
           name: this.state.name,
           mapFrame: this.state.mapFrame,
-          distance: this.state.distance
+          imgURL: this.state.imgURL,
+          distance: this.state.distance,
+          difficulty: this.state.difficulty
         }
       })
       window.location.replace('/trails')
@@ -40,12 +44,20 @@ class UpdateTrail extends Component {
                    value={this.state.mapFrame}
                    onChange={e => this.setState({ mapFrame: e.target.value })}
         />
+        <TextField floatingLabelText="Trail Image"
+                   value={this.state.imgURL}
+                   onChange={e => this.setState({ imgURL: e.target.value })}
+        />
         <TextField floatingLabelText="Distance"
                    value={this.state.distance}
                    onChange={e => this.setState({ distance: e.target.value })}
                    required
                    type="number"
                    min="0.00" step="0.01" max="100"
+        />
+        <TextField floatingLabelText="Difficulty"
+                   value={this.state.difficulty}
+                   onChange={e => this.setState({ difficulty: e.target.value })}
         />
         <RaisedButton label="Update"
                       type="submit"
@@ -56,12 +68,14 @@ class UpdateTrail extends Component {
 }
 
 const UPDATE_TRAIL_MUTATION = gql`
-  mutation($id: ID!, $name:String, $mapFrame:String, $distance:Float){
+  mutation($id: ID!, $name:String, $mapFrame:String, $imgURL:String, $distance:Float, $difficulty:String!){
     updateTrail(
       id: $id,
       name: $name,
       mapFrame: $mapFrame,
-      distance: $distance
+      imgURL: $imgURL,
+      distance: $distance,
+      difficulty: $difficulty
     ){
       id
     }

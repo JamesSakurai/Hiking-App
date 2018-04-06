@@ -35,7 +35,9 @@ type Trail implements Node {
   id: ID!
   name: String!
   mapFrame: String!
+  imgURL: String
   distance: Float!
+  difficulty: String!
 }
 
 type User implements Node {
@@ -1194,7 +1196,9 @@ type TrailConnection {
 input TrailCreateInput {
   name: String!
   mapFrame: String!
+  imgURL: String
   distance: Float!
+  difficulty: String!
 }
 
 input TrailCreateManyInput {
@@ -1223,8 +1227,12 @@ enum TrailOrderByInput {
   name_DESC
   mapFrame_ASC
   mapFrame_DESC
+  imgURL_ASC
+  imgURL_DESC
   distance_ASC
   distance_DESC
+  difficulty_ASC
+  difficulty_DESC
   updatedAt_ASC
   updatedAt_DESC
   createdAt_ASC
@@ -1235,7 +1243,9 @@ type TrailPreviousValues {
   id: ID!
   name: String!
   mapFrame: String!
+  imgURL: String
   distance: Float!
+  difficulty: String!
 }
 
 type TrailSubscriptionPayload {
@@ -1276,13 +1286,17 @@ input TrailSubscriptionWhereInput {
 input TrailUpdateDataInput {
   name: String
   mapFrame: String
+  imgURL: String
   distance: Float
+  difficulty: String
 }
 
 input TrailUpdateInput {
   name: String
   mapFrame: String
+  imgURL: String
   distance: Float
+  difficulty: String
 }
 
 input TrailUpdateManyInput {
@@ -1473,6 +1487,59 @@ input TrailWhereInput {
   All values not ending with the given string.
   """
   mapFrame_not_ends_with: String
+  imgURL: String
+  """
+  All values that are not equal to given value.
+  """
+  imgURL_not: String
+  """
+  All values that are contained in given list.
+  """
+  imgURL_in: [String!]
+  """
+  All values that are not contained in given list.
+  """
+  imgURL_not_in: [String!]
+  """
+  All values less than the given value.
+  """
+  imgURL_lt: String
+  """
+  All values less than or equal the given value.
+  """
+  imgURL_lte: String
+  """
+  All values greater than the given value.
+  """
+  imgURL_gt: String
+  """
+  All values greater than or equal the given value.
+  """
+  imgURL_gte: String
+  """
+  All values containing the given string.
+  """
+  imgURL_contains: String
+  """
+  All values not containing the given string.
+  """
+  imgURL_not_contains: String
+  """
+  All values starting with the given string.
+  """
+  imgURL_starts_with: String
+  """
+  All values not starting with the given string.
+  """
+  imgURL_not_starts_with: String
+  """
+  All values ending with the given string.
+  """
+  imgURL_ends_with: String
+  """
+  All values not ending with the given string.
+  """
+  imgURL_not_ends_with: String
   distance: Float
   """
   All values that are not equal to given value.
@@ -1502,6 +1569,59 @@ input TrailWhereInput {
   All values greater than or equal the given value.
   """
   distance_gte: Float
+  difficulty: String
+  """
+  All values that are not equal to given value.
+  """
+  difficulty_not: String
+  """
+  All values that are contained in given list.
+  """
+  difficulty_in: [String!]
+  """
+  All values that are not contained in given list.
+  """
+  difficulty_not_in: [String!]
+  """
+  All values less than the given value.
+  """
+  difficulty_lt: String
+  """
+  All values less than or equal the given value.
+  """
+  difficulty_lte: String
+  """
+  All values greater than the given value.
+  """
+  difficulty_gt: String
+  """
+  All values greater than or equal the given value.
+  """
+  difficulty_gte: String
+  """
+  All values containing the given string.
+  """
+  difficulty_contains: String
+  """
+  All values not containing the given string.
+  """
+  difficulty_not_contains: String
+  """
+  All values starting with the given string.
+  """
+  difficulty_starts_with: String
+  """
+  All values not starting with the given string.
+  """
+  difficulty_not_starts_with: String
+  """
+  All values ending with the given string.
+  """
+  difficulty_ends_with: String
+  """
+  All values not ending with the given string.
+  """
+  difficulty_not_ends_with: String
 }
 
 input TrailWhereUniqueInput {

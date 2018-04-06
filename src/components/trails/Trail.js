@@ -27,10 +27,9 @@ class Trail extends Component {
       window.location.replace('/Trails')
     }
   
-    //cart functions
+    //MyTrails functions
     const AddToMyTrails = async () => {
       await addToMyTrails({variables:{trail_id:trail.id}}).then(r => console.log(r))
-      // window.location.replace('/mytrails')
       alert(`${trail.name} has been added to your myTrails list.`)
     }
     const RemoveFromMyTrails = async () => {
@@ -39,12 +38,8 @@ class Trail extends Component {
     }
     console.log(this.props.trail.id)
     return(
-      <Paper className='trail' zDepth={5}>
-        <Dialogs trail={trail}>
-          {/*<h2>{trail.name}</h2>*/}
-          {/*<iframe className="mapFrame" src={trail.mapFrame} title={'Not Available'}/>*/}
-          {/*<div>{trail.distance} Miles</div>*/}
-        </Dialogs>
+      <Paper className='trail' zDepth={3}>
+        <Dialogs trail={trail}/>
         <div>Distance: {trail.distance} Miles</div>
           {this.props.cartView?
             <div>

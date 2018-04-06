@@ -12,7 +12,9 @@ class CreateTrail extends Component {
     this.state = {
       name: '',
       mapFrame: '',
-      distance: ''
+      imgURL: '',
+      distance: '',
+      difficulty: ''
     }
   }
   render () {
@@ -22,7 +24,9 @@ class CreateTrail extends Component {
         variables: {
           name: this.state.name,
           mapFrame: this.state.mapFrame,
-          distance: this.state.distance
+          imgURL: this.state.imgURL,
+          distance: this.state.distance,
+          difficulty: this.state.difficulty
         }
       })
       // this.context.history.push('/')
@@ -40,11 +44,17 @@ class CreateTrail extends Component {
         <TextField floatingLabelText="Map iFrame"
                    onChange={e => this.setState({ mapFrame: e.target.value })}
         />
+        <TextField floatingLabelText="Trail Image"
+                   onChange={e => this.setState({ imgURL: e.target.value })}
+        />
         <TextField floatingLabelText="Distance"
                    onChange={e => this.setState({ distance: e.target.value })}
                    required
                    type="number"
                    min="0.00" step="0.01" max="100"
+        />
+        <TextField floatingLabelText="Difficulty"
+                   onChange={e => this.setState({ difficulty: e.target.value })}
         />
         <RaisedButton label="Create"
                       type="submit"
@@ -55,11 +65,13 @@ class CreateTrail extends Component {
 }
 
 const CREATE_TRAIL_MUTATION = gql`
-  mutation($name:String!, $mapFrame:String!, $distance:Float!){
+  mutation($name:String!, $mapFrame:String!, $imgURL:String, $distance:Float!, $difficulty:String!){
     createTrail(
       name: $name,
       mapFrame: $mapFrame,
-      distance: $distance
+      imgURL: $imgURL,
+      distance: $distance,
+      difficulty: $difficulty,
     ){
       id
     }

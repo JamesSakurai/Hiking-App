@@ -21,8 +21,8 @@ type Mutation {
   updateProduct(id: ID!,name: String,imgURL: String,desc: String,price: Float):Product
   deleteProduct(id: ID!): Product
 
-  createTrail(name: String!, mapFrame: String!, distance: Float!): Trail
-  updateTrail(id: ID!, name: String, mapFrame: String, distance: Float): Trail
+  createTrail(name: String!, mapFrame: String!, imgURL: String, distance: Float!, difficulty: String!): Trail
+  updateTrail(id: ID!, name: String, mapFrame: String, imgURL: String, distance: Float, difficulty: String): Trail
   deleteTrail(id: ID!): Trail
 
   addTrailToMyTrails(user_id: ID!, trail_id: ID!): User

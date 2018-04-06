@@ -1,16 +1,13 @@
 import React, {Component} from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
+import '../styles/Form.css'
 
 const customContentStyle = {
   width: '90%',
   maxWidth: 'none',
 };
 
-/**
- * The dialog width has been set to occupy the full width of browser through the `contentStyle` property.
- */
 export default class extends Component {
   state = {
     open: false,
@@ -28,7 +25,7 @@ export default class extends Component {
     const {trail} = this.props
     const actions = [
       <FlatButton
-        label="Cancel"
+        label="Close"
         primary={true}
         onClick={this.handleClose}
       />,
@@ -40,8 +37,9 @@ export default class extends Component {
     ];
     
     return (
-      <div>
-        <RaisedButton label={trail.name} onClick={this.handleOpen} />
+      <div onClick={this.handleOpen} >
+        <a className="trailName">{trail.name}</a>
+        <img className="imgURL" src={trail.imgURL} alt="not available"/>
         <Dialog
           title={trail.name}
           actions={actions}
@@ -49,8 +47,15 @@ export default class extends Component {
           contentStyle={customContentStyle}
           open={this.state.open}
         >
-          <iframe className="mapFrame" src={trail.mapFrame} title={'Not Available'}/>
-          <div>Distance: {trail.distance} Miles</div>
+          <div className="flexContainer">
+            <div className="flexItem">
+              <iframe className="mapFrame" src={trail.mapFrame} title={'Not Available'}/>
+            </div>
+            <div className="flexItem">
+              <div>Distance: {trail.distance} Miles</div>
+              <div>Difficulty: {trail.difficulty}</div>
+            </div>
+          </div>
         </Dialog>
       </div>
     );

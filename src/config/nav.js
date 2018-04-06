@@ -3,12 +3,20 @@ import AppBar from 'material-ui/AppBar'
 import { black } from 'material-ui/styles/colors'
 import { ModalButton } from '../components/buttons'
 import Login from '../components/forms/Login'
+import { logout, isAuthenticated } from '../config/auth'
 import CreateUser from '../components/forms/CreateUser'
+import '../styles/Form.css'
+
+
+
 
 import CustomDrawer from './CustomDrawer'
 
 const styles = {
-  color: black
+  color: black,
+  textAlign: 'center',
+  fontSize: '40px',
+  fontFamily: 'Arial'
 }
 
 export default class extends Component {
@@ -27,8 +35,15 @@ export default class extends Component {
         <AppBar title="Walk The Wasatch"
                 titleStyle={styles}
                 onLeftIconButtonClick={toggleOpen}>
-          <ModalButton label="Register" display={<CreateUser/>}/>
-          <ModalButton label="Login" display={<Login/>}/>
+          {isAuthenticated()?
+            
+            <button className="logoutButton" onClick={logout} >Logout</button>
+            :
+            [
+              <ModalButton label="Register" display={<CreateUser/>}/>,
+              <ModalButton label="Login" display={<Login/>}/>
+            ]
+            }
         </AppBar>
         <CustomDrawer open={this.state.open}
                       change={toggleOpen}/>
