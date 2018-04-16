@@ -21,9 +21,10 @@ const muiTheme = getMuiTheme({
   palette: {
     textColor: Colors.darkBlack,
     primary1Color: Colors.green700,
-    // primary2Color: Colors.indigo700,
-    // accent1Color: Colors.redA200,
-    // pickerHeaderColor: Colors.darkBlack,
+    primary2Color: Colors.indigo700,
+    secondary1Color: Colors.blue700,
+    accent1Color: Colors.redA200,
+    pickerHeaderColor: Colors.darkBlack,
   },
   appBar: {
     height: 90,

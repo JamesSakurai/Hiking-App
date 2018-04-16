@@ -40,7 +40,7 @@ export default class extends Component {
             <button className="logoutButton" onClick={logout} >Logout</button>
             :
             [
-              <ModalButton label="Register" display={<CreateUser/>}/>,
+              <ModalButton label="Register" secondary={true} display={<CreateUser/>}/>,
               <ModalButton label="Login" display={<Login/>}/>
             ]
             }

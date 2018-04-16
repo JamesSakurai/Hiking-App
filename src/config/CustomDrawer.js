@@ -15,8 +15,7 @@ export default class extends Component {
           <MenuItem onClick={() => handleClick('/')}>Home</MenuItem>
           <MenuItem onClick={() => handleClick('/Trails')} >Trails</MenuItem>
           <MenuItem onClick={() => handleClick('/MyTrails')}>MyTrails</MenuItem>
-          <MenuItem onClick={() => handleClick('/Products')}>Products</MenuItem>
-          <MenuItem onClick={() => handleClick('/Users')}>My Account</MenuItem>
+          <MenuItem onClick={() => handleClick('/User')}>My Account</MenuItem>
         </Drawer>
       </div>
     )
