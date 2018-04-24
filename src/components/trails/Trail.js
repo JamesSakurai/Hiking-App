@@ -44,8 +44,8 @@ class Trail extends Component {
             </div>
             :
             <span className="buttons">
-             <ModalButton label="Update" display={<UpdateTrail trail={trail}/>}/>
-              <ModalButton label="Delete" display={DeleteTrail()} color="secondary"/>
+             <ModalButton  label="Update" display={<UpdateTrail trail={trail}/>}/>
+              <ModalButton secondary={true} label="Delete" display={DeleteTrail()}/>
             <span className="modal">
               <AddNotification trail={this.props.trail}/>
             </span>

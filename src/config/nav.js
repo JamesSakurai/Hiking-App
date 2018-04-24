@@ -7,9 +7,6 @@ import { logout, isAuthenticated } from '../config/auth'
 import CreateUser from '../components/forms/CreateUser'
 import '../styles/Form.css'
 
-
-
-
 import CustomDrawer from './CustomDrawer'
 
 const styles = {
@@ -40,7 +37,7 @@ export default class extends Component {
             <button className="logoutButton" onClick={logout} >Logout</button>
             :
             [
-              <ModalButton label="Register" secondary={true} display={<CreateUser/>}/>,
+              <ModalButton label="Register" display={<CreateUser/>}/>,
               <ModalButton label="Login" display={<Login/>}/>
             ]
             }

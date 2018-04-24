@@ -29,11 +29,7 @@ export default class extends Component {
         primary={true}
         onClick={this.handleClose}
       />,
-      <FlatButton
-        label="Add To MyTrails"
-        primary={true}
-        onClick={this.handleClose}
-      />,
+      
     ];
     
     return (
@@ -47,11 +43,11 @@ export default class extends Component {
           contentStyle={customContentStyle}
           open={this.state.open}
         >
-          <div className="flexContainer">
-            <div className="flexItem">
+          <div className="detailContainer">
+            <div className="detailItem">
               <iframe className="mapFrame" src={trail.mapFrame} title={'Not Available'}/>
             </div>
-            <div className="flexItem">
+            <div className="detailItem">
               <div>Distance: {trail.distance} Miles</div>
               <div>Difficulty: {trail.difficulty}</div>
             </div>

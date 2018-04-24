@@ -20,6 +20,7 @@ class AddNotification extends Component {
     });
   };
   
+  
   render() {
     const {addToMyTrails, trail} = this.props
     const AddToMyTrails = async () => {

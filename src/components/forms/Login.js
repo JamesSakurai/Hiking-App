@@ -22,7 +22,7 @@ export default class extends Component {
               await login(this.state.email, this.state.pw)
       }}>
         <h1>Login</h1>
-        <TextField required floatingLabelText={`Email`} onChange={(e) => this.setState({ email: e.target.value })} />
+        <TextField required floatingLabelText={`Email`} onChange={(e) => this.setState({ email: e.target.value.toLowerCase() })} />
         <TextField required type='password' floatingLabelText={`Password`} onChange={(e) => this.setState({ pw: e.target.value})} />
         <RaisedButton label='Login' type='submit' />
       </form>

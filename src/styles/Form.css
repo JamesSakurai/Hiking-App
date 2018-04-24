@@ -9,6 +9,7 @@ body {
 }
 
 .trail {
+  height: 90%;
   padding: 10px;
   margin: 25px;
   text-align: center;
@@ -38,12 +39,12 @@ body {
   width: 100%;
 }
 
-.flexContainer {
+.detailContainer {
   display: flex;
   flex-wrap: nowrap;
 }
 
-.flexItem {
+.detailItem {
   text-align: center;
   margin: 30px;
   font-size: 20px;

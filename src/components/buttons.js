@@ -10,27 +10,25 @@ export class ModalButton extends Component {
     super(props)
     this.state = {
       open: false,
-      primary: true,
-      secondary: false,
+      // primary: true,
+      // secondary: false,
     }
   }
-  componentDidMount () {
-    if(this.props.color){
-      if(this.props.color === 'secondary')
-        this.setState({
-          primary: false,
-          secondary: true
-        })
-    }
-  }
+  
+  // componentWillMount() {
+  //   if (this.props.secondary) {
+  //     this.setState({primary: false, secondary: true, default: false})
+  //   }
+  // }
   render() {
     const {label, display} = this.props
     return (
       <span className="modal">
-        <FlatButton primary={this.state.primary}
-                      secondary={this.state.secondary}
-                      label={label}
-                      onClick={e => this.setState({ open: !this.state.open })} />
+        <FlatButton label={label}
+                    // primary={this.state.primary}
+                    // secondary={this.state.secondary}
+                    onClick={e => this.setState({ open: !this.state.open })}
+                    />
         <Dialog
           actions={<FlatButton label='Close' onClick={e => this.setState({open: !this.state.open})}/>}
           open={this.state.open}

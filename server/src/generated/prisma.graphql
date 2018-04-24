@@ -518,18 +518,18 @@ type Mutation {
   upsertCartProduct(where: CartProductWhereUniqueInput!, create: CartProductCreateInput!, update: CartProductUpdateInput!): CartProduct!
   upsertProduct(where: ProductWhereUniqueInput!, create: ProductCreateInput!, update: ProductUpdateInput!): Product!
   upsertTrail(where: TrailWhereUniqueInput!, create: TrailCreateInput!, update: TrailUpdateInput!): Trail!
-  updateManyUsers(data: UserUpdateInput!, where: UserWhereInput!): BatchPayload!
-  updateManyCarts(data: CartUpdateInput!, where: CartWhereInput!): BatchPayload!
-  updateManyMyTrailses(data: MyTrailsUpdateInput!, where: MyTrailsWhereInput!): BatchPayload!
-  updateManyCartProducts(data: CartProductUpdateInput!, where: CartProductWhereInput!): BatchPayload!
-  updateManyProducts(data: ProductUpdateInput!, where: ProductWhereInput!): BatchPayload!
-  updateManyTrails(data: TrailUpdateInput!, where: TrailWhereInput!): BatchPayload!
-  deleteManyUsers(where: UserWhereInput!): BatchPayload!
-  deleteManyCarts(where: CartWhereInput!): BatchPayload!
-  deleteManyMyTrailses(where: MyTrailsWhereInput!): BatchPayload!
-  deleteManyCartProducts(where: CartProductWhereInput!): BatchPayload!
-  deleteManyProducts(where: ProductWhereInput!): BatchPayload!
-  deleteManyTrails(where: TrailWhereInput!): BatchPayload!
+  updateManyUsers(data: UserUpdateInput!, where: UserWhereInput): BatchPayload!
+  updateManyCarts(data: CartUpdateInput!, where: CartWhereInput): BatchPayload!
+  updateManyMyTrailses(data: MyTrailsUpdateInput!, where: MyTrailsWhereInput): BatchPayload!
+  updateManyCartProducts(data: CartProductUpdateInput!, where: CartProductWhereInput): BatchPayload!
+  updateManyProducts(data: ProductUpdateInput!, where: ProductWhereInput): BatchPayload!
+  updateManyTrails(data: TrailUpdateInput!, where: TrailWhereInput): BatchPayload!
+  deleteManyUsers(where: UserWhereInput): BatchPayload!
+  deleteManyCarts(where: CartWhereInput): BatchPayload!
+  deleteManyMyTrailses(where: MyTrailsWhereInput): BatchPayload!
+  deleteManyCartProducts(where: CartProductWhereInput): BatchPayload!
+  deleteManyProducts(where: ProductWhereInput): BatchPayload!
+  deleteManyTrails(where: TrailWhereInput): BatchPayload!
 }
 
 enum MutationType {
