@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-
 import MyTrails from '../components/mytrails/MyTrails'
 import MyTrailsButton from '../components/mytrails/MyTrailsButton'
 
@@ -13,7 +12,6 @@ export default class extends Component {
         <MyTrails/>
         <br/>
         <MyTrailsButton label="Clear Trails"/>
-        {/*<MyTrailsButton label="Checkout"/>*/}
       </main>
     )
   }

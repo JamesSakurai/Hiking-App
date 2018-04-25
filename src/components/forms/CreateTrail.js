@@ -40,6 +40,7 @@ class CreateTrail extends Component {
         <TextField floatingLabelText="Name"
                    onChange={e => this.setState({ name: e.target.value })}
                    required
+                   autoFocus
         />
         <TextField floatingLabelText="Map iFrame"
                    onChange={e => this.setState({ mapFrame: e.target.value })}

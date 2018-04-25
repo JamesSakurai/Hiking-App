@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import gql from 'graphql-tag'
 import {graphql} from 'react-apollo'
 
+
 class User extends Component {
   constructor(props){
     super(props)
@@ -22,10 +23,9 @@ class User extends Component {
   render() {
     return (
       <div>
-        <Link to="/">Home</Link>
-        {/*<Link to="/MyTrails">MyTrails</Link>*/}
-        <h2>Welcome Back {this.state.name}</h2>
-        <h2>{this.state.email}</h2>
+        <button><Link to="/">Home</Link></button>
+        <button><Link to="/Trails">Trails</Link></button>
+        <h1>Welcome Back {this.state.name}</h1>
       </div>
     );
   }

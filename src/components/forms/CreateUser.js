@@ -33,6 +33,7 @@ class CreateUser extends Component {
             onSubmit={submitUser}>
         <h1>Create an Account</h1>
         <TextField placeholder="Name"
+                   autoFocus
                    onChange={e => this.setState({ name: e.target.value})}/>
         <TextField placeholder="Email"
                    onChange={e => this.setState({ email: e.target.value})}/>

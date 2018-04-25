@@ -3,6 +3,7 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import {GridList, GridTile} from 'material-ui/GridList';
 import Subheader from 'material-ui/Subheader';
+import '../../styles/Form.css';
 
 import Trail from './Trail'
 
@@ -14,7 +15,7 @@ class AllTrails extends Component {
       <section className='list'>
         {TrailGrid(allTrails)}
       </section>
-    ) : <div>loading</div>
+    ) : <div className='loading'>loading...</div>
   }
 }
 

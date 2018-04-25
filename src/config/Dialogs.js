@@ -8,6 +8,11 @@ const customContentStyle = {
   maxWidth: 'none',
 };
 
+const customTitleStyle = {
+  fontSize: 40,
+  textAlign: 'center',
+}
+
 export default class extends Component {
   state = {
     open: false,
@@ -38,6 +43,7 @@ export default class extends Component {
         <img className="imgURL" src={trail.imgURL} alt="not available"/>
         <Dialog
           title={trail.name}
+          titleStyle={customTitleStyle}
           actions={actions}
           modal={true}
           contentStyle={customContentStyle}
@@ -48,8 +54,9 @@ export default class extends Component {
               <iframe className="mapFrame" src={trail.mapFrame} title={'Not Available'}/>
             </div>
             <div className="detailItem">
-              <div>Distance: {trail.distance} Miles</div>
-              <div>Difficulty: {trail.difficulty}</div>
+              <h2>Distance: {trail.distance} Miles</h2>
+              <br/>
+              <h2>Difficulty: {trail.difficulty}</h2>
             </div>
           </div>
         </Dialog>
